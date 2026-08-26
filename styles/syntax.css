@@ -44,6 +44,8 @@
     --editor-nonmatching-bracket-outline: 1px solid var(--fantasy-white);
     --editor-search-match-background-color: var(--fantasy-cyan);
     --editor-search-match-selected-background-color: var(--fantasy-cyan);
+    /* Same blue family as the editor's selection highlight, for the autocomplete tooltip's active item (was left at the library's default purple) */
+    --editor-tooltip-autocomplete-item-selected-background-color: hsl(var(--hsl-blue) / 45%);
 
     /*
      * Syntax tokens
