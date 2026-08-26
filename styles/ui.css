@@ -7,13 +7,16 @@
     --light-primary-color: hsl(var(--hsl-gold));
     --primary-color-hover: hsl(var(--hsl-gold) / 40%);
     --primary-color-focus: var(--color-gold);
+    --primary-color-active: var(--color-gold-200);
+    --primary-color-down: var(--color-gold-200);
     --link-color: hsl(var(--hsl-gold-600) / 80%);
     --link-hover-color: var(--color-gold-600);
     --negative-color: var(--color-red-600);
-    --negative-color-hover: var(--color-red-700);
+    --negative-color-hover: var(--color-red-600);
     --negative-color-focus: var(--color-red-700);
     --negative-color-down: var(--color-red-800);
     --negative-color-active: var(--color-red-800);
+    --negative-button-background-color: var(--color-red-700);
     --positive-color: var(--color-green);
     --positive-color-hover: var(--color-green-hover);
     --positive-color-focus: var(--color-green-hover);
@@ -72,13 +75,19 @@
       Buttons
     --------------------*/
     --primary-button-focus-background-color: hsl(var(--hsl-gold) / 40%);
-    --primary-button-active-background-color: var(--hsl-gold);
-    --primary-button-down-background-color: var(--hsl-gold);
+    --primary-button-active-background-color: var(--color-gold-100);
+    --primary-button-down-background-color: var(--color-gold-100);
+    --primary-button-background-color: var(--color-gold-200);
+    --primary-button-hover-background-color: var(--color-gold);
     --button-background: hsl(var(--hsl-gold) / 40%) none;
     --button-hover-background-color: hsl(var(--hsl-gold) / 60%);
     --button-hover-color: hsl(var(--hsl-fg));
     --button-hover-background-image: var(--color-gold-100);
     --button-text-color: hsl(var(--hsl-fg));
+    --primary-button-text-color: hsl(var(--hsl-fg-muted));
+    --secondary-button-text-color: var(--button-text-color);
+    --positive-button-text-color: var(--button-text-color);
+    --negative-button-text-color: var(--button-text-color);
     --button-down-background-color: hsl(var(--hsl-base03) / 80%);
     --button-active-background-color: hsl(var(--hsl-base01) / 70%);
     --basic-button-box-shadow: 0px 0px 0px 1px var(--color-base05) inset;
