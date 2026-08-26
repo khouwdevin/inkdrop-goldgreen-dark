@@ -2,9 +2,9 @@
   "name": "goldgreen-dark",
   "description": "Gold and green theme (UI, syntax and preview) for Inkdrop",
   "version": "2.1.6",
+  "type": "module",
   "theme": true,
   "themeAppearance": "dark",
-  "type": "module",
   "styleSheets": [
     "palette.css",
     "ui.css",
@@ -24,7 +24,7 @@
   "author": "khouwdevin<khouwdevin@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@inkdropapp/theme-dev-helpers": "^0.6.1"
+    "@inkdropapp/theme-dev-helpers": "^0.6.2"
   },
   "engines": {
     "inkdrop": "^6.0.0"
