@@ -199,7 +199,7 @@
   "--success-color": "hsl(152deg 50% 58%)",
   "--success-border-color": "hsl(142deg 77% 73% / 70%)",
   "--success-header-color": "hsl(142deg 77% 73% / 90%)",
-  "--success-text-color": "hsl(141deg 84% 93% / 90%)",
+  "--success-text-color": "hsl(142deg 71% 45%)",
   "--error-background-color": "hsl(0deg 96% 89% / 20%)",
   "--error-color": "hsl(0deg 72% 51%)",
   "--error-border-color": "hsl(0deg 94% 82% / 70%)",

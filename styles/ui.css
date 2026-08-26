@@ -19,6 +19,7 @@
     --positive-color-focus: var(--color-green-hover);
     --positive-color-down: var(--color-green-down);
     --positive-color-active: var(--color-green-down);
+    --positive-text-color: var(--color-green);
     --warning-color: var(--color-gold-400);
 
     /*-------------------
