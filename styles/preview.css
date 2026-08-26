@@ -19,8 +19,13 @@
     --mde-preview-table-row-background-color: hsl(var(--hsl-green) / 6%);
     --mde-preview-table-row-border-color: hsl(var(--hsl-green) / 15%);
     --mde-preview-table-row-stripe-background-color: hsl(var(--hsl-green) / 10%);
-    --mde-preview-inline-code-background-color: hsl(0deg 0% 0% / 10%);
-    --mde-preview-codeblock-background-color: hsl(0deg 0% 0% / 10%);
+    /* Same goldgreen accent as the editor's own code-block/inline-code styling
+       (styles/syntax.css's --md-*), instead of preview.css's previously-
+       unrelated near-black tints */
+    --mde-preview-inline-code-background-color: var(--md-inline-code-background-color);
+    --mde-preview-inline-code-border-color: var(--md-inline-code-border-color);
+    --mde-preview-codeblock-background-color: var(--md-codeblock-background-color);
+    --mde-preview-codeblock-border-color: var(--md-codeblock-border-color);
     /* Brighter than --color-blue so it actually reads as blue against the near-black background */
     --mde-preview-hr-background-color: hsl(212deg 70% 60% / 70%);
     --mde-preview-hr-border-color: hsl(212deg 70% 60% / 40%);

@@ -74,26 +74,51 @@
     /*-------------------
       Buttons
     --------------------*/
-    --primary-button-focus-background-color: hsl(var(--hsl-gold) / 40%);
     --primary-button-active-background-color: var(--color-gold-100);
     --primary-button-down-background-color: var(--color-gold-100);
     --primary-button-background-color: var(--color-gold-200);
     --primary-button-hover-background-color: var(--color-gold);
+    /* Every variant's focus background matches its own hover background, so
+       clicking a button doesn't flash a different (or default/unthemed) color */
+    --primary-button-focus-background-color: var(--primary-button-hover-background-color);
     --button-background: hsl(var(--hsl-gold) / 40%) none;
     --button-hover-background-color: hsl(var(--hsl-gold) / 60%);
     --button-hover-color: hsl(var(--hsl-fg));
     --button-hover-background-image: var(--color-gold-100);
+    --button-focus-background-color: var(--button-hover-background-color);
+    --button-focus-color: hsl(var(--hsl-fg));
+    --button-down-color: hsl(var(--hsl-fg));
     --button-text-color: hsl(var(--hsl-fg));
     --primary-button-text-color: hsl(var(--hsl-fg-muted));
     --secondary-button-text-color: var(--button-text-color);
-    --positive-button-text-color: var(--button-text-color);
-    --negative-button-text-color: var(--button-text-color);
     --button-down-background-color: hsl(var(--hsl-base03) / 80%);
     --button-active-background-color: hsl(var(--hsl-base01) / 70%);
     --basic-button-box-shadow: 0px 0px 0px 1px var(--color-base05) inset;
+    --basic-button-text-color: var(--text-color);
     --basic-button-hover-background: var(--color-gold-200);
+    --basic-button-hover-text-color: var(--text-color);
+    --basic-button-focus-background: var(--basic-button-hover-background);
+    --basic-button-focus-text-color: var(--text-color);
     --basic-button-down-background: hsl(var(--hsl-base03) / 50%);
+    --basic-button-down-text-color: var(--text-color);
+    --basic-button-active-background: hsl(var(--hsl-gold) / 20%);
+    --basic-button-active-text-color: var(--text-color);
     --label-basic-background: none var(--color-green);
+
+    /* Negative (red) button */
+    --negative-button-hover-background-color: var(--color-red-600);
+    --negative-button-focus-background-color: var(--negative-button-hover-background-color);
+    --negative-button-down-background-color: var(--color-red-800);
+    --negative-button-active-background-color: var(--color-red-800);
+    --negative-button-text-color: var(--button-text-color);
+
+    /* Positive (green) button */
+    --positive-button-background-color: var(--color-green-down);
+    --positive-button-hover-background-color: var(--color-green);
+    --positive-button-focus-background-color: var(--positive-button-hover-background-color);
+    --positive-button-down-background-color: var(--color-green-hover);
+    --positive-button-active-background-color: var(--color-green-hover);
+    --positive-button-text-color: var(--color-white);
 
     /*-------------------
       Segments (grouped panels)
@@ -113,8 +138,15 @@
     --form-select-background: var(--color-bg);
     --input-background: var(--note-search-bar-input-background);
     --input-border: 1px solid var(--internal-border-color);
-    --form-input-focus-border-color: hsl(var(--hsl-fg-muted) / 40%);
-    --form-textarea-focus-border-color: hsl(var(--hsl-fg-muted) / 40%);
+    --input-color: var(--text-color);
+    --form-input-focus-border-color: var(--color-green);
+    --form-input-focus-background: var(--input-background);
+    --form-input-focus-color: var(--text-color);
+    --form-textarea-focus-border-color: var(--color-green);
+    --form-textarea-focus-background: var(--input-background);
+    --form-textarea-focus-color: var(--text-color);
+    --input-focus-background: var(--input-background);
+    --input-focus-color: var(--text-color);
     --input-focus-border-color: var(--color-green);
     --input-focus-box-shadow: hsl(var(--hsl-fg-muted) / 40%) none;
     --checkbox-background: var(--color-bg);
@@ -131,7 +163,10 @@
     --checkbox-intermediate-check-color: var(--color-white);
     --checkbox-focus-border-color: var(--color-white);
     --toggle-lane-background: var(--strong-transparent-black);
-    --toggle-on-focus-lane-color: var(--color-gold-200);
+    --toggle-on-lane-color: var(--color-gold);
+    /* Same as --toggle-on-lane-color: clicking focuses the input, so a mismatched
+       focus color would flash before settling back to the "on" color */
+    --toggle-on-focus-lane-color: var(--color-gold);
 
     /*-------------------
       Menus, Dropdowns & Modals
@@ -140,12 +175,26 @@
     --vertical-menu-background: var(--color-bg);
     --tabular-menu-active-background: none var(--color-gold-200);
     --tabular-menu-border-color: hsl(var(--hsl-gold));
+    --tabular-menu-text-color: var(--text-color);
+    --tabular-menu-hovered-text-color: var(--text-color-muted);
+    --tabular-menu-active-color: var(--color-white);
     --dropdown-menu-background: var(--color-bg);
+    --dropdown-menu-item-color: var(--text-color);
+    --dropdown-menu-header-color: var(--text-color);
+    --dropdown-menu-item-description-color: var(--text-color-muted);
+    --dropdown-menu-message-color: var(--text-color-muted);
+    --dropdown-active-item-background: hsl(var(--hsl-gold) / 20%);
+    --dropdown-active-item-color: var(--text-color);
+    --dropdown-hovered-item-background: hsl(var(--hsl-gold) / 15%);
+    --dropdown-hovered-item-color: var(--text-color);
+    --dropdown-selected-background: hsl(var(--hsl-gold) / 15%);
+    --dropdown-selected-color: var(--text-color);
     --inline-dropdown-menu-background: none hsl(var(--hsl-gold-100) / 80%);
     --modal-box-header-background: var(--color-bg);
     --modal-box-content-background: var(--color-bg);
     --modal-box-actions-background: var(--color-bg);
     --message-background: hsl(var(--hsl-green) / 15%);
+    --message-box-shadow: 0px 0px 0px 1px hsl(var(--hsl-green) / 30%) inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
     --notification-item-background: hsl(var(--hsl-gold-100) / 40%);
 
     /*-------------------
@@ -197,23 +246,48 @@
     --info-header-color: var(--text-color);
     --info-text-color: var(--text-color-muted);
     --info-background-color: hsl(var(--hsl-gold) / 20%);
-    --info-border-color: hsl(var(--hsl-fg-muted) / 40%);
+    --info-box-shadow: 0px 0px 0px 1px hsl(var(--hsl-gold) / 40%) inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
+
+    /* Same-hue backgrounds so .ui.positive/.negative/.warning/.error/.success.message
+       (which read distinct --{type}-* variables from --info-*) stay on-theme too */
+    --positive-background-color: hsl(var(--hsl-green) / 15%);
+    --positive-header-color: var(--color-green);
+    --positive-box-shadow: 0px 0px 0px 1px hsl(var(--hsl-green) / 40%) inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    --success-background-color: hsl(var(--hsl-green) / 15%);
+    --success-text-color: var(--color-green);
+    --success-header-color: var(--color-green);
+    --success-box-shadow: 0px 0px 0px 1px hsl(var(--hsl-green) / 40%) inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    --negative-background-color: hsl(var(--hsl-red-900) / 20%);
+    --negative-text-color: var(--color-red-600);
+    --negative-header-color: var(--color-red-600);
+    --negative-box-shadow: 0px 0px 0px 1px hsl(var(--hsl-red-900) / 60%) inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    --error-background-color: hsl(var(--hsl-red-900) / 20%);
+    --error-text-color: var(--color-red-600);
+    --error-header-color: var(--color-red-600);
+    --error-box-shadow: 0px 0px 0px 1px hsl(var(--hsl-red-900) / 60%) inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    --warning-background-color: hsl(var(--hsl-gold-400) / 20%);
+    --warning-text-color: var(--color-gold-600);
+    --warning-header-color: var(--color-gold-600);
+    --warning-box-shadow: 0px 0px 0px 1px hsl(var(--hsl-gold) / 40%) inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
 
     /*-------------------
       Tags (the "default"/untagged-color pill, e.g. plain #tag)
     --------------------*/
-    --tag-default-background-color: var(--color-green);
-    --tag-default-border-color: var(--color-green);
+    --tag-default-background-color: var(--color-green-down);
+    --tag-default-border-color: var(--color-green-down);
     --tag-default-text-color: var(--color-white);
-    --tag-default-active-background-color: var(--color-green);
-    --tag-default-active-border-color: var(--color-green);
+    --tag-default-active-background-color: var(--color-green-down);
+    --tag-default-active-border-color: var(--color-green-down);
     --tag-default-active-text-color: var(--color-white);
-    --tag-default-circular-background-color: var(--color-green);
-    --tag-default-circular-border-color: var(--color-green);
+    --tag-default-circular-background-color: var(--color-green-down);
+    --tag-default-circular-border-color: var(--color-green-down);
     /* "Official" plugin badge (`.ui.basic.grey.label`), undefined by default */
     --tag-grey-color: var(--color-white);
     /* "Community" plugin badge (`.ui.basic.yellow.label`), undefined by default */
-    --tag-yellow-color: var(--color-blue);
+    /* Sits on --label-basic-background's solid green fill, so this needs to be
+       a different, darker green to stay readable rather than blending in */
+    --tag-yellow-color: var(--color-emerald-950);
+    --tag-yellow-border-color: var(--color-emerald-900);
 
     /*-------------------
       Scrollbar & Focus

@@ -111,9 +111,12 @@
     /* Words inside list items (`.tok-content`, confirmed via devtools) */
     --syntax-content-color: var(--fantasy-white);
 
-    --md-inline-code-background-color: hsl(0deg 0% 0% / 2%);
-    --md-inline-code-border-color: transparent;
-    --md-codeblock-background-color: hsl(0deg 0% 0% / 1%);
+    /* Goldgreen accent: warm gold tint behind the code, cool green edge around it */
+    --md-inline-code-background-color: hsl(var(--hsl-gold) / 10%);
+    --md-inline-code-border-color: hsl(var(--hsl-green) / 35%);
+    --md-codeblock-background-color: hsl(var(--hsl-gold) / 6%);
+    --md-codeblock-border-color: hsl(var(--hsl-green) / 30%);
+    --md-codeblock-border-width: 1px;
     /* Bullet `-`, ordered `1.`, and checkbox dash markers */
     --md-list-mark-color: var(--fantasy-gold);
     /* Nested list markers (Inkdrop 6.1+): 2nd and 3rd indent levels */
