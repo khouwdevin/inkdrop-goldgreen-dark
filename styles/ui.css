@@ -111,6 +111,8 @@
       Forms & Inputs
     --------------------*/
     --form-select-background: var(--color-bg);
+    --input-background: var(--note-search-bar-input-background);
+    --input-border: 1px solid var(--internal-border-color);
     --form-input-focus-border-color: hsl(var(--hsl-fg-muted) / 40%);
     --form-textarea-focus-border-color: hsl(var(--hsl-fg-muted) / 40%);
     --input-focus-border-color: var(--color-green);
