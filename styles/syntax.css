@@ -42,8 +42,21 @@
     --editor-matching-bracket-outline: 1px solid var(--fantasy-white);
     --editor-matching-bracket-background-color: transparent;
     --editor-nonmatching-bracket-outline: 1px solid var(--fantasy-white);
-    --editor-search-match-background-color: var(--fantasy-cyan);
-    --editor-search-match-selected-background-color: var(--fantasy-cyan);
+    /* Find (Ctrl+F) hits: translucent gold so the text underneath stays readable
+       (solid cyan blotted it out); the current hit gets a stronger fill + outline */
+    --editor-search-match-background-color: hsl(var(--hsl-gold) / 30%);
+    --editor-search-match-outline: none;
+    --editor-search-match-selected-background-color: hsl(var(--hsl-gold) / 55%);
+    --editor-search-match-selected-outline: 1px solid var(--color-gold-600);
+    /* Other occurrences of the selected word: lighter tint of the selection blue */
+    --editor-selection-match-background-color: hsl(var(--hsl-blue) / 30%);
+    /* Find/replace panel: same elevated surface as popups/tooltips instead of the default neutral gray */
+    --editor-panel-background-color: var(--color-bg-elevated);
+    --editor-panel-color: var(--text-color-muted);
+    --editor-panel-border-color: var(--border-color);
+    --editor-placeholder-color: hsl(var(--hsl-base3) / 30%);
+    /* Typed characters highlighted in autocomplete suggestions (default was blue) */
+    --editor-completion-matched-text-color: var(--fantasy-gold);
     /* Same blue family as the editor's selection highlight, for the autocomplete tooltip's active item (was left at the library's default purple) */
     --editor-tooltip-autocomplete-item-selected-background-color: hsl(var(--hsl-blue) / 45%);
 

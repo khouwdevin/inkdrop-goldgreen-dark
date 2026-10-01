@@ -139,6 +139,15 @@
     --input-background: var(--note-search-bar-input-background);
     --input-border: 1px solid var(--internal-border-color);
     --input-color: var(--text-color);
+    /* Default neutral 25% washed out on the green-tinted input background */
+    --input-placeholder-color: hsl(var(--hsl-base3) / 40%);
+    --input-placeholder-focus-color: hsl(var(--hsl-base3) / 50%);
+    /* Text selection inside inputs and elsewhere: same blue as the editor selection
+       (defaults were neutral gray / bright sky blue) */
+    --input-highlight-background: hsl(var(--hsl-blue) / 55%);
+    --input-highlight-color: var(--text-color);
+    --highlight-background: hsl(var(--hsl-blue) / 55%);
+    --highlight-color: var(--text-color);
     --form-input-focus-border-color: var(--color-green);
     --form-input-focus-background: var(--input-background);
     --form-input-focus-color: var(--text-color);
@@ -232,6 +241,8 @@
     --note-list-view-item-active-background: var(--color-gold-200);
     --note-search-bar-input-background: hsl(var(--hsl-green) / 12%);
     --mark-color: var(--color-gray-50);
+    /* Search-hit highlight in the note list (default was yellow) */
+    --mark-background-color: hsl(var(--hsl-gold) / 30%);
 
     /*-------------------
       Preferences
@@ -302,6 +313,28 @@
       Misc
     --------------------*/
     --off-white: hsl(0 0 15%);
+  }
+
+  /*-------------------
+    Element-scoped variable overrides. The app's own rules for these are
+    unlayered, so a plain `color:` here would lose to them — but they read
+    var()s, and redefining those on the element itself wins over :root.
+  --------------------*/
+
+  /* Preferences sidebar badge (e.g. "Updates" plugin count): its text is
+     --inverted-text-color, near-black and unreadable on the dark gold
+     --warning-color background */
+  .preferences-sidebar .badge {
+    --inverted-text-color: var(--text-color);
+  }
+
+  /* "1 of 6" counter in the editor/preview find bar: a .ui.basic.label, so it
+     inherited --label-basic-background's solid green (meant for plugin badges)
+     under faint placeholder-colored text. Blend it into the input instead */
+  .matches-count-label {
+    --label-basic-background: none var(--input-background);
+    --label-basic-border-color: var(--internal-border-color);
+    --input-placeholder-color: var(--text-color-muted);
   }
 
   /*-------------------
